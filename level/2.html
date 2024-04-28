@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber project</title>
+    <title>Coding</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div>
-            Codingan ini rusak, puh
-        </div>
+        <div class="title">
+            Codingan ini error, Puh
+        </div><br>
+        <table><tr><td>
+            <button id="compile" style="background-color: yellow;" class="btn-submit">Compile</button>
+        </td><td>
+            <button id="run" style="background-color: green; color: white;" class="btn-submit">Run</button>
+        </td></tr></table>
         <div class="codingan">
         <pre>
 <span class="gray">1</span>    <span class="green">#include&lt;iostream&gt;</span>
@@ -25,13 +30,12 @@
         </pre>
         </div>
         <br>
-        <button id="">Compile</button>
-        <button id="">Run</button>
         <script src="../script.js"></script>
         <script>
             document.getElementById('anu').addEventListener('click',()=>{
                 const hasil = document.querySelector('.nimirsiti').value;
-                if (hasil == `"Hello World!";`) {
+                const sintak = document.querySelector('.nimirdiwi').value;
+                if (hasil == `"Hello World!";` && sintak == `cout<<`) {
                     window.location.href = '3.html'
                 }
             });
