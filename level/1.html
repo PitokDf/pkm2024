@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber project</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-    <div>
-        Seberapa <a class="text" href="2.html">sepuh</a>-kah anda?
+    <div class="wrapper">
+        <div>
+            Seberapa <button id="tebak">sepuh</button>-kah anda?
+        </div>
+        <input type="range" name="sepuh" oninput="change()" id="sepuh" min="0" max="100"> <br>
+        <button type="submit" id="btn-submit">Submit</button>
+        <script src="../script.js"></script>
+        <script>
+
+            const btnSubmit = document.getElementById("btn-submit");
+            function change() {
+                const sepuh = document.getElementById("sepuh").value;
+                const tebak = document.getElementById("tebak");
+
+                if (sepuh >= 100) {
+                    tebak.addEventListener('click', function () {
+                        window.location.href = '2.thml'
+                    });
+                }
+
+                if (sepuh < 50) {
+                    btnSubmit.style.backgroundColor = "green";
+                    btnSubmit.style.color = "white";
+                } else if (sepuh < 80) {
+                    btnSubmit.style.backgroundColor = "yellow";
+                    btnSubmit.style.color = "black";
+                } else {
+                    btnSubmit.style.backgroundColor = "red";
+                    btnSubmit.style.color = "white";
+                }
+            }
+            change()
+        </script>
     </div>
-    <input type="range" name="" id=""> <br>
-    <button type="submit">Submit</button>
-    <script src="../script.js"></script>
 </body>
+
 </html>
