@@ -10,9 +10,55 @@
 
 <body>
     <div class="wrapper">
-
+        <table>
+            <tr>
+                <td><button class="btn" style=""><img class="lamp" id="lamp1" src="../icon/lightbulb.svg"></button></td>
+                <td><button class="btn" style=""><img class="lamp" id="lamp2" src="../icon/lightbulb.svg"></button></td>
+                <td><button class="btn" style=""><img class="lamp" id="lamp3" src="../icon/lightbulb.svg"></button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" style=""><img class="switch" id="switch1" src="../icon/toggle-off.svg"></button></td>
+                <td><button class="btn" style=""><img class="switch" id="switch2" src="../icon/toggle-off.svg"></button></td>
+                <td><button class="btn" style=""><img class="switch" id="switch3" src="../icon/toggle-off.svg"></button></td>
+            </tr>
+        </table>
     </div>
     <script>
+        const _switch = [
+            document.getElementById('switch1'),
+            document.getElementById('switch2'),
+            document.getElementById('switch3'),
+        ];
+        // for (let i = 0; i <= 5; i++) {
+        //     _switch[i].addEventListener('click',()=>{
+        //         if (_switch[i].src.slice(-6) == "on.svg") {
+        //             _switch[i].src = "../icon/toggle-off.svg";
+        //         }else{
+        //             _switch[i].src = "../icon/toggle-on.svg";
+        //         }
+        //     });
+        // }
+        _switch[0].addEventListener('click',()=>{
+            if (_switch[i].src.slice(-6) == "on.svg") {
+                _switch[i].src = "../icon/toggle-off.svg";
+            }else{
+                _switch[i].src = "../icon/toggle-on.svg";
+            }
+        });
+        _switch[0].addEventListener('click',()=>{
+            if (_switch[i].src.slice(-6) == "on.svg") {
+                _switch[i].src = "../icon/toggle-off.svg";
+            }else{
+                _switch[i].src = "../icon/toggle-on.svg";
+            }
+        });
+        _switch[0].addEventListener('click',()=>{
+            if (_switch[i].src.slice(-6) == "on.svg") {
+                _switch[i].src = "../icon/toggle-off.svg";
+            }else{
+                _switch[i].src = "../icon/toggle-on.svg";
+            }
+        });
     </script>
 </body>
 

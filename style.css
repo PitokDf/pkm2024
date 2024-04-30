@@ -44,8 +44,23 @@ body::-webkit-scrollbar{
     box-shadow: 0 0 12px black;
 }
 
-.btn-submit:active {
+.btn, .btn-submit:active {
     scale: 0.9;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all ease-in-out .2s;
+    background: transparent;
+}
+
+.btn-play{
+    margin: 10px;
+    background-color: green; 
+    filter: drop-shadow(1px 1px 5px greenyellow);
 }
 
 #tebak {
@@ -100,4 +115,12 @@ body::-webkit-scrollbar{
     text-decoration: none;
     filter: drop-shadow(1px 1px 5px blue);
     right: 10px;
+}
+
+.switch{
+    height: 30px;
+}
+
+.switch:hover{
+    filter: drop-shadow(1px 1px 5px white);
 }
