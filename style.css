@@ -67,6 +67,7 @@ body::-webkit-scrollbar{
     border: none;
     background-color: transparent;
     padding: 0;
+    cursor: pointer;
 }
 
 .codingan{
@@ -116,11 +117,26 @@ body::-webkit-scrollbar{
     filter: drop-shadow(1px 1px 5px blue);
     right: 10px;
 }
-
+.kanjut{
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    filter: drop-shadow(1px 1px 5px yellow);
+}
+.hidden{
+    display: none;
+}
 .switch{
     height: 30px;
 }
 
 .switch:hover{
     filter: drop-shadow(1px 1px 5px white);
+}
+
+.lamp{
+    height: 30px;
+}
+.active{
+    filter: drop-shadow(1px 1px 10px white);
 }
