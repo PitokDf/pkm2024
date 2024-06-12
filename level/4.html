@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <table id="tabel">
+            <tr>
+                <td><button class="btn"><img class="lamp" id="lamp1" src="../icon/lightbulb.svg"></button></td>
+                <td><button class="btn"><img class="lamp" id="lamp2" src="../icon/lightbulb.svg"></button></td>
+                <td><button class="btn"><img class="lamp" id="lamp3" src="../icon/lightbulb.svg"></button></td>
+            </tr>
+            <tr>
+                <td><button class="btn"><img class="switch" id="switch1" src="../icon/toggle-off.svg"></button></td>
+                <td><button class="btn"><img class="switch" id="switch2" src="../icon/toggle-off.svg"></button></td>
+                <td><button class="btn"><img class="switch" id="switch3" src="../icon/toggle-off.svg"></button></td>
+            </tr>
+            <button onclick="next(4)" class="kanjut btn-submit hidden" style="background: transparent; top: 100px;">Lanjut</button>
+        </table>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        const _switch = [
+            document.getElementById('switch1'),
+            document.getElementById('switch2'),
+            document.getElementById('switch3'),
+        ];
+        const _lamp = [
+            document.getElementById('lamp1'),
+            document.getElementById('lamp2'),
+            document.getElementById('lamp3'),
+        ];
+        _switch[0].addEventListener('click', () => {
+            if (_switch[0].src.slice(-6) == "on.svg") {
+                _switch[0].src = "../icon/toggle-off.svg";
+                toggleLamp(_lamp[0]);
+                toggleLamp(_lamp[1]);
+            } else {
+                _switch[0].src = "../icon/toggle-on.svg";
+                toggleLamp(_lamp[0]);
+                toggleLamp(_lamp[1]);
+            }
+            hidupSemua();
+        });
+        _switch[1].addEventListener('click', () => {
+            if (_switch[1].src.slice(-6) == "on.svg") {
+                _switch[1].src = "../icon/toggle-off.svg";
+                toggleLamp(_lamp[1]);
+                toggleLamp(_lamp[2]);
+            } else {
+                _switch[1].src = "../icon/toggle-on.svg";
+                toggleLamp(_lamp[1]);
+                toggleLamp(_lamp[2]);
+            }
+            hidupSemua();
+        });
+        _switch[2].addEventListener('click', () => {
+            if (_switch[2].src.slice(-6) == "on.svg") {
+                _switch[2].src = "../icon/toggle-off.svg";
+                toggleLamp(_lamp[2]);
+                toggleLamp(_lamp[0]);
+            } else {
+                _switch[2].src = "../icon/toggle-on.svg";
+                toggleLamp(_lamp[2]);
+                toggleLamp(_lamp[0]);
+            }
+            hidupSemua();
+        });
+        _lamp[2].addEventListener('click', () => {
+            if (_lamp[0].classList.contains("active") && _lamp[1].classList.contains("active")) {
+                toggleLamp(_lamp[2]);
+            }
+            hidupSemua();
+        });
+        function toggleLamp(lamp) {
+            if (lamp.src.slice(-5) == "l.svg") {
+                lamp.src = "../icon/lightbulb.svg"
+                lamp.classList.remove("active");
+            } else {
+                lamp.src = "../icon/lightbulb-fill.svg"
+                lamp.classList.add("active");
+            }
+        }
+        function hidupSemua() {
+            let hidup = 0;
+            for (let i = 0; i < 3; i++) {
+                if (_lamp[i].classList.contains('active')) {
+                    console.log("lampu " + _lamp[i] + " nyala")
+                    hidup++;
+                }
+                console.log(hidup)
+            }
+            if (hidup == 3) {
+                document.querySelector('.kanjut').classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

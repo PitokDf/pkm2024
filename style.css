@@ -1,8 +1,18 @@
 body {
-    background-color: pink;
+    background-color: #2f2f2f;
     text-align: center;
     height: 100vh;
     font-family: sans-serif;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
 }
 
 .text {
@@ -21,7 +31,7 @@ body {
     place-items: center;
 }
 
-#btn-submit {
+.btn-submit {
     padding: 8px 16px;
     border: none;
     cursor: pointer;
@@ -30,17 +40,103 @@ body {
     transition: all ease-in-out .2s;
 }
 
-#btn-submit:hover {
+.btn-submit:hover {
     box-shadow: 0 0 12px black;
 }
 
-#btn-submit:active {
+.btn, .btn-submit:active {
     scale: 0.9;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all ease-in-out .2s;
+    background: transparent;
+}
+
+.btn-play{
+    margin: 10px;
+    background-color: green; 
+    filter: drop-shadow(1px 1px 5px greenyellow);
 }
 
 #tebak {
     border: none;
     background-color: transparent;
     padding: 0;
-    font-size: 16px;
+    cursor: pointer;
+}
+
+.codingan{
+    background: #2f2f2f;
+    color: aqua;
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid aqua;
+}
+.gray{
+    color: gray;
+}
+.green{
+    color: greenyellow;
+}
+.error{
+    border-bottom: 1px solid red;
+}
+.yellow{
+    color: yellow;
+}
+.nimirsiti{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: coral;
+}
+.nimirdiwi{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: aqua;
+    width: 44px;
+}
+
+.virus{
+    height: 20px;
+    /* background-color: red; */
+}
+
+.lanjut{
+    display: none;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    filter: drop-shadow(1px 1px 5px blue);
+    right: 10px;
+}
+.kanjut{
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    filter: drop-shadow(1px 1px 5px yellow);
+}
+.hidden{
+    display: none;
+}
+.switch{
+    height: 30px;
+}
+
+.switch:hover{
+    filter: drop-shadow(1px 1px 5px white);
+}
+
+.lamp{
+    height: 30px;
+}
+.active{
+    filter: drop-shadow(1px 1px 10px white);
 }
