@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virus</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <button onclick="next(3)" class="lanjut btn-submit" style="background: transparent;">Lanjut -></button>
+    <div class="wrapper" style="height: 130%;">
+        <div id="main">
+            <p id="tulisan" class="title">
+                Basmi virus
+            </p>
+            <img class="virus" src="../icon/bug-fill.svg">
+        </div>
+        <button onclick="basmiVirus()" style="bottom: 0; position: absolute; border: none; outline: none; background: transparent;"><img style="filter: drop-shadow(1px 1px 5px aqua);" src="../icon/shield-fill-check.svg"></button>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        const virus = document.querySelector('.virus');
+        const main = document.querySelector('#main');
+        virus.addEventListener('click',()=>{
+            var rand1 = Math.floor(Math.random() * 100) + 1;
+            var rand2 = Math.floor(Math.random() * 50) + 1;
+            virus.style.transform = `translate(${rand1}vh, ${rand2}vh)`;
+
+            const virusLain = document.createElement('img');
+            virusLain.classList.add('virus');
+            virusLain.src = "../icon/bug-fill.svg";
+            virusLain.style.transform = `translate(${rand1}vh, ${rand2}vh)`;
+            virusLain.addEventListener('click',()=>{
+                var rand1 = Math.floor(Math.random() * 200) - 100;
+                var rand2 = Math.floor(Math.random() * 200) - 100;
+                virusLain.style.transform = `translate(${rand1}vh, ${rand2}vh)`;
+            });
+            main.appendChild(virusLain);
+        });
+        function basmiVirus(){
+            document.querySelectorAll('.virus').forEach(function(element) {
+                element.remove();
+            });
+            document.querySelector('.lanjut').style.display = "block";
+            var _main = document.getElementById('tulisan');
+            _main.innerText = "Virus berhasil dibasmi";
+            _main.style.filter = "drop-shadow(1px 1px 10px aquamarine)";
+            _main.style.color = "white";
+        }
+    </script>
+</div>
+</body>
+
+</html>

@@ -4,28 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber project</title>
+    <title>Sepuh?</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div>
-            Seberapa <button id="tebak">sepuh</button>-kah anda?
+        <div class="title">
+            Seberapa <button id="tebak" class="title">sepuh</button>-kah anda?
         </div>
-        <input type="range" name="sepuh" oninput="change()" id="sepuh" min="0" max="100"> <br>
-        <button type="submit" id="btn-submit">Submit</button>
+        <input type="range" name="sepuh" oninput="change()" id="sepuh" min="0" max="100" style="width: 300px; margin: 30px;"> <br>
+        <button type="submit" class="btn-submit">Submit</button>
         <script src="../script.js"></script>
         <script>
 
-            const btnSubmit = document.getElementById("btn-submit");
+            const btnSubmit = document.querySelector(".btn-submit");
             function change() {
                 const sepuh = document.getElementById("sepuh").value;
                 const tebak = document.getElementById("tebak");
 
                 if (sepuh >= 100) {
                     tebak.addEventListener('click', function () {
-                        window.location.href = '2.thml'
+                        if (sepuh == 100) {
+                            next(1);
+                        }
                     });
                 }
 
